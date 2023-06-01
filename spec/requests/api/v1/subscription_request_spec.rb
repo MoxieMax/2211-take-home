@@ -51,6 +51,10 @@ RSpec.describe 'Subscription API' do
       expect(response).to be_successful
 
       sub_data = JSON.parse(response.body, symbolize_names: :true)[:data]
+      
+      expect(sub_data[:id]).to be_an(String)
+      expect(sub_data[:type]).to eq('subscription')
+      expect(sub_data[:attributes][:status]).to eq('cancelled')
       binding.pry
     end
   end
