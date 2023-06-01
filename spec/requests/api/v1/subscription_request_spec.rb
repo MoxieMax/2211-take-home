@@ -1,10 +1,7 @@
-class Api::V1::SubscriptionsController < ApplicationController
-  
-  
-  private
-  
-    def sub_params
-      params.permit(:title, :price, :status, :frequency, :tea_id, :customer_id)
-    end
-  
+require 'rails_helper'
+
+RSpec.describe 'Customer API' do
+  describe 'GET /api/vi/subscriptions' do
+    
+  end
 end
