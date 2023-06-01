@@ -23,7 +23,16 @@ RSpec.describe 'Subscription API' do
       
       sub_data = JSON.parse(response.body, symbolize_names: :true)[:data]
       
-      binding.pry
+      expect(sub_data[:id]).to be_an(String)
+
+      expect(sub_data[:type]).to eq('subscription')
+      
+      attributes = sub_data[:attributes]
+      expect(attributes[:title]).to eq('Emperor')
+      expect(attributes[:price]).to eq(7.50)
+      expect(attributes[:status]).to eq('active')
+      expect(attributes[:frequency]).to eq(2)
+      # binding.pry
     end
   end
   
