@@ -1,13 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe 'Customer API' do
-  describe 'GET /api/vi/customers/:id' do
+  describe 'GET /api/v1/customers/:id' do
     let!(:customer) { FactoryBot.create(:customer) }
 
     before { get "/api/v1/customers/#{customer.id}" }
     
     it 'returns the customer' do
-      # binding.pry
       expect(response).to be_successful
       
       customer_data = JSON.parse(response.body, symbolize_names: :true)[:data]
@@ -38,7 +37,6 @@ RSpec.describe 'Customer API' do
       
       expect(attributes[:address]).to be_a(String)
       expect(attributes[:address]).to eq(customer.address)
-      binding.pry
     end
   end
 end
