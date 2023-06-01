@@ -36,4 +36,4 @@
 /config/application.yml
 
 # SimpleCov
-/coverage
+/coverage/*
