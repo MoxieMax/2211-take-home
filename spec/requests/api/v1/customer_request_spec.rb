@@ -18,6 +18,7 @@ RSpec.describe 'Customer API' do
       
       expect(customer_data[:id]).to be_a(String)
       expect(customer_data[:type]).to be_a(String)
+      expect(customer_data[:type]).to eq("customer")
       expect(customer_data[:attributes]).to be_a(Hash)
       expect(customer_data[:relationships]).to be_a(Hash)
       
