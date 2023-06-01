@@ -9,6 +9,15 @@ class Api::V1::SubscriptionsController < ApplicationController
     render json: SubscriptionSerializer.new(sub), status: 201
   end
   
+  def update
+   sub = Subscription.find(params[:id])
+   
+   if sub.status == "active"
+     sub.update_attribute(:status, 1)
+     render json: SubscriptionSerializer.new(sub)
+   end
+  end
+  
   private
   
     def sub_params

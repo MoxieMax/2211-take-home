@@ -32,7 +32,26 @@ RSpec.describe 'Subscription API' do
       expect(attributes[:price]).to eq(7.50)
       expect(attributes[:status]).to eq('active')
       expect(attributes[:frequency]).to eq(2)
-      # binding.pry
+    end
+  end
+  
+  describe 'PATCH /api/vi/customers/:id/subscriptions' do
+    it 'modifies a subscription' do
+      sub = Subscription.create(
+                                title: 'Emperor',
+                                price: 7.50,
+                                status: 'active',
+                                frequency: 2,
+                                customer_id: customer.id,
+                                tea_id: tea1.id
+                              )
+      
+      patch "/api/v1/customers/#{customer.id}/subscriptions/#{sub.id}"
+
+      expect(response).to be_successful
+
+      sub_data = JSON.parse(response.body, symbolize_names: :true)[:data]
+      binding.pry
     end
   end
   
