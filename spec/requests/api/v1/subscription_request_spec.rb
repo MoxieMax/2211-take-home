@@ -5,6 +5,28 @@ RSpec.describe 'Subscription API' do
   let!(:tea1) { FactoryBot.create(:tea) }
   let!(:tea2) { FactoryBot.create(:tea) }
   
+  describe 'POST/api/v1/customers/:id/subscriptions' do
+    it 'creates a subscription' do
+      sub = {
+        title: 'Emperor',
+        price: 7.50,
+        status: 'active',
+        frequency: 2,
+        customer_id: customer.id,
+        tea_id: tea1.id
+      }
+      
+      post "/api/v1/customers/#{customer.id}/subscriptions",
+           params: sub
+      
+      expect(response).to be_successful
+      
+      sub_data = JSON.parse(response.body, symbolize_names: :true)[:data]
+      
+      binding.pry
+    end
+  end
+  
   describe 'GET /api/v1/customers/:id/subscriptions' do
     it "returns all subscriptions for a given customer" do
       sub1 = FactoryBot.create(:subscription, customer_id: customer.id, tea_id: tea1.id)
