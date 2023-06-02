@@ -59,7 +59,7 @@ This is a REST API for a tea subscription service to:
 After cloning the repo:
 
   1. `bundle install`
-  3. Run `rails db:{create,migrate}`
+  3. Run `rails db:{create,migrate,seed}`
   5. Run `rails s`
   7. API endpoints are:
 
