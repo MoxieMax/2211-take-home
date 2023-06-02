@@ -55,7 +55,7 @@ RSpec.describe 'Subscription API' do
       expect(sub_data[:id]).to be_an(String)
       expect(sub_data[:type]).to eq('subscription')
       expect(sub_data[:attributes][:status]).to eq('cancelled')
-      binding.pry
+      # binding.pry
     end
   end
   
