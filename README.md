@@ -97,7 +97,7 @@ Max MacGillivray - MaxMacGillivray@protonmail.com
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* Thank you Turing, and your wonderful instructors!
+* Thank you Turing instructors!
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -117,4 +117,3 @@ Max MacGillivray - MaxMacGillivray@protonmail.com
 [license-url]: https://github.com/MoxieMax/2211-take-home/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/max-macgillivray
-[product-screenshot]: images/screenshot.png
